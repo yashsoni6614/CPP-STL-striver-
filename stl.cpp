@@ -5,12 +5,18 @@ using namespace std ;
 void explainPairs();
 void explainVectors();
 void explainLists();
-
+void explainDQ() ;
+void explainStack();
+void explainQueue();
+void explainPQ ();
+void explainSet();
 int main(int argc, char const *argv[])
 {
     // explainPairs();
     // explainVectors();
-    explainLists();
+    // explainLists();
+    // explainStack();
+
     return 0;
 }
 
@@ -75,6 +81,70 @@ void explainVectors() {
 
     //(10,20)
     k.pop_back();//this gonna remove the last element like this (10)
+}
+
+void explainLists () {
+    list<int> l ; 
+    //in th elist the only funciton which is new in here is that there is the push front and the emplace front fucntion which is gonna push the element in tthe fron and rest is sane like the vector 
+    l.push_front(5);//(5)
+    l.emplace_front(6);//(6,5);
+
+}
+void explainDQ() {
+    //they same as the list and the vector so i am gonnaa skip this thing 
+}
+
+void explainStack() {
+    //stack is the LIFO DS 
+    //push pop and top operation is there and each operation has the time complexitu of O(1) in here
+    stack<int> st ; 
+    st.push(3);//(3)
+    st.push(5);//(3,5)
+    st.push(8);//(3,5,8)
+    st.top() ; //gonna return 8
+    st.pop(); //(3,5)
+    st.empty();//returns a boolean telling if the stack is empty or not 
+    st.size();//gonna return the size of the stack 
+    stack<int> st1,st2;
+    st1.swap(st2);//this is how we are gonna swap the two stacks in here 
+
+}
+
+void explainQueue(){
+    //this is similar to the stack but here it follows the FIFO principle
+    queue<int>q;
+    q.push(1);
+    q.push(2);
+    q.push(3);//(1,2,3)
+    q.front();//gonna print the 1
+    q.back();//gonna print the 3 
+    q.pop();//(2,3)
+
+}
+
+void explainPQ () {
+    priority_queue<int>pq; //priority que is the implementation of the max heap in whcih the first element is always the largest element 
+    //IN THIS PRIOTIY QUEUE THE TOP ELEMENT IS THE LARGEST ELEMENT IT IS AN ADT WHICH IS IMPLEMENTED USING  THE HEAP DS 
+    //the push pop operation takes the logn time complexity while the top operation takes the o1 
+    pq.push(5);
+    pq.push(2);
+    pq.push(8);
+    pq.emplace(10);
+    pq.top();//this gonna give 10
+    
+
+    //this is how to implement in the min heap
+    priority_queue<int,vector<int>,greater<int>> pq; //this is how we have to implement usimg the min heap 
+
+    pq.push(5);
+    pq.push(2);
+    pq.push(8);
+    pq.emplace(10);
+    pq.top();//this gonna give 2
+    
+}
 
 
+void explainSet() {
+    
 }
